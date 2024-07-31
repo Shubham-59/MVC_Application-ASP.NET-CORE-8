@@ -1,0 +1,108 @@
+﻿1<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Bookify</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Bookify.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        .navbar {
+            background-color: #f8f9fa; /* Light grey background */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+            padding: 0.5rem 1rem; /* Reduced padding */
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: #343a40; /* Darker text color */
+            font-weight: 500; /* Slightly lighter weight */
+            font-size: 0.875rem; /* Smaller font size */
+            padding: 0.5rem 0.75rem; /* Reduced padding for links */
+            transition: color 0.3s ease; /* Smooth color transition */
+        }
+
+            .navbar-nav .nav-item .nav-link:hover {
+                color: green; /* Color on hover */
+            }
+
+        .navbar-brand {
+            color: crimson; /* Brand color */
+            font-weight: 700; /* Bold brand name */
+            font-size: 1.25rem; /* Adjust font size */
+        }
+
+        .navbar-toggler {
+            border-color: crimson; /* Border color for toggler */
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='%23007bff' stroke-width='2' d='M5 7h20M5 15h20M5 23h20'/></svg>");
+        }
+
+        .footer {
+            background-color: #f8f9fa; /* Light grey background */
+            color: #343a40; /* Darker text color */
+        }
+
+            .footer a {
+                color: #007bff; /* Blue color for links */
+                text-decoration: none;
+            }
+
+                .footer a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light mb-2">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bookify</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index" style="color:#007bff; font-size:18px;font-weight:600">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Category" asp-action="Index" style="color:#007bff;font-size:18px;font-weight:600">Category</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Privacy" style="color:#007bff;font-size:18px;font-weight:600">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Employee" asp-action="Home" style="color:#007bff;font-size:18px;font-weight:600">Employee Management System</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="text-center">
+            &copy; 2024 - Bookify - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <i class="bi bi-chat-heart-fill"></i>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
